@@ -1,5 +1,3 @@
-
-
 #==================================FUNCTIONS====================================
 
 #===============
@@ -7,19 +5,20 @@ def func1():
     a = str(input("Enter 1 or 2 : "))
     if a == "1" :
         state = "lost phone search"
-        print("you have entered", a)
+        print("you have entered", a, state)
         err1 = False
-        proceed()
+        proceed(state)
     elif a == "2":
         state = "buy new phone"
-        print("you have entered", a)
+        print("you have entered", a, state)
         err1 = False
         proceed()
     else :
         print("please enter only '1' or '2'")
         func1()
 #===============
-def proceed():
+def proceed(x):
+    print(x,": STATEEEEEEEEE")
     print("Before going further we would need to know you.Please enter the details mentioned below.")
     
     if err2 == True :
@@ -30,9 +29,8 @@ def proceed():
         print("please enter a valid mobile number")
         mb_no = reproceed()
         #mb_no = reproceed()
-    print(state)
-    if state == "lost phone search" :
-        
+    print(x)
+    if x == "lost phone search" :
         print(mb_no)
         lostPhone()
     else :
@@ -51,12 +49,12 @@ def reproceed():
     elif len(x) == 10 :
         for i in x:
             print(i)
-            #if i == '0' or i == '1' or i == '2' or i == '3' or i == '4' or i == '5' or i == '6' or i == '7' or i == '8' or i == '9' :
+            if i == '0' or i == '1' or i == '2' or i == '3' or i == '4' or i == '5' or i == '6' or i == '7' or i == '8' or i == '9' :
                 #return int(x)
-            #   wow +=1
-            #else :
-            #    print("Please enter INTEGERS ONLY")
-            #    reproceed()
+               wow +=1
+            else :
+                print("Please enter INTEGERS ONLY")
+                reproceed()
         if wow == 10 :
             return int(x)
     else :
@@ -100,7 +98,4 @@ name = None
 adres = None
 mb_no = None
 y = None
-func1()
-
-    
-    
+func1() 
